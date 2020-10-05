@@ -1,6 +1,7 @@
 package com.example.latihanfundamentaldicoding
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -12,6 +13,7 @@ class ActivityDepan : AppCompatActivity() {
     private lateinit var btnIntent: Button
     private lateinit var btnClickImage: Button
     private lateinit var btnIntentExplicit: Button
+    private lateinit var btnIntentImplicit: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +23,7 @@ class ActivityDepan : AppCompatActivity() {
         btnIntent = (findViewById(R.id.btnIntent))
         btnClickImage = (findViewById(R.id.btnClickImage))
         btnIntentExplicit = (findViewById(R.id.btnIntentExplicit))
+        btnIntentImplicit = (findViewById(R.id.btnIntentImplicit))
 
         btnKalkulator.setOnClickListener{
             val ClickKalkulator = Intent(this, ActivityKalkulator::class.java)
@@ -50,6 +53,12 @@ class ActivityDepan : AppCompatActivity() {
             val clickIntenExplicit = Intent(this, ActivityIntenExplicit::class.java)
             clickIntenExplicit.putExtra(ActivityIntenExplicit.EXTRA_PERSON, person)
             startActivity(clickIntenExplicit)
+        }
+
+        btnIntentImplicit.setOnClickListener{
+            val phoneNumber = "085803000346"
+            val clickImplicit = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phoneNumber"))
+            startActivity(clickImplicit)
         }
 
     }
