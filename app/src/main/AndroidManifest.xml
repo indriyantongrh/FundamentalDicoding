@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityIntenExplicit"></activity>
+        <activity android:name=".AcitivityMoveForResult"></activity>
+        <activity android:name=".ActivityIntenExplicit" />
         <activity android:name=".ActivityKalkulator" />
         <activity android:name=".ActivityIntent" />
         <activity android:name=".ActivityDepan">

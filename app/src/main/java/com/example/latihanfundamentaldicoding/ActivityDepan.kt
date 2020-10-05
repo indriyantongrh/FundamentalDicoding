@@ -1,10 +1,12 @@
 package com.example.latihanfundamentaldicoding
 
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import com.example.latihanfundamentaldicoding.Model.Person
 
 class ActivityDepan : AppCompatActivity() {
@@ -14,6 +16,9 @@ class ActivityDepan : AppCompatActivity() {
     private lateinit var btnClickImage: Button
     private lateinit var btnIntentExplicit: Button
     private lateinit var btnIntentImplicit: Button
+    private lateinit var btnMoveResult: Button
+    private lateinit var tvHasil: TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +29,8 @@ class ActivityDepan : AppCompatActivity() {
         btnClickImage = (findViewById(R.id.btnClickImage))
         btnIntentExplicit = (findViewById(R.id.btnIntentExplicit))
         btnIntentImplicit = (findViewById(R.id.btnIntentImplicit))
+        tvHasil = (findViewById(R.id.tvHasil))
+        btnMoveResult = (findViewById(R.id.btnMoveResult))
 
         btnKalkulator.setOnClickListener{
             val ClickKalkulator = Intent(this, ActivityKalkulator::class.java)
@@ -61,9 +68,28 @@ class ActivityDepan : AppCompatActivity() {
             startActivity(clickImplicit)
         }
 
+        btnMoveResult.setOnClickListener{
+            val moveForResultIntent = Intent(this, AcitivityMoveForResult::class.java)
+            startActivityForResult(moveForResultIntent, REQUEST_CODE)
+        }
+
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == AcitivityMoveForResult.RESULT_CODE) {
+                val selectedValue =
+                    data?.getIntExtra(AcitivityMoveForResult.EXTRA_SELECTED_VALUE, 0)
+                tvHasil.text = "Hasil : $selectedValue"
+            }
+        }
     }
 
     companion object {
         const val SELECT_PICTURE = 1
+        private const val REQUEST_CODE = 100
+
     }
 }
