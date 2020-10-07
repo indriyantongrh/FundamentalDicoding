@@ -17,6 +17,7 @@ class ActivityDepan : AppCompatActivity() {
     private lateinit var btnIntentExplicit: Button
     private lateinit var btnIntentImplicit: Button
     private lateinit var btnMoveResult: Button
+    private lateinit var btnFragment: Button
     private lateinit var tvHasil: TextView
 
 
@@ -31,6 +32,7 @@ class ActivityDepan : AppCompatActivity() {
         btnIntentImplicit = (findViewById(R.id.btnIntentImplicit))
         tvHasil = (findViewById(R.id.tvHasil))
         btnMoveResult = (findViewById(R.id.btnMoveResult))
+        btnFragment = (findViewById(R.id.btnFragment))
 
         btnKalkulator.setOnClickListener{
             val ClickKalkulator = Intent(this, ActivityKalkulator::class.java)
@@ -39,6 +41,11 @@ class ActivityDepan : AppCompatActivity() {
         btnIntent.setOnClickListener{
             val ClickDataInten = Intent(this, ActivityIntent::class.java)
             startActivity(ClickDataInten)
+        }
+
+        btnFragment.setOnClickListener{
+            val ClickIntentFragment = Intent(this, ActivityIntent::class.java)
+            startActivity(ClickIntentFragment)
         }
 
         btnClickImage.setOnClickListener{
