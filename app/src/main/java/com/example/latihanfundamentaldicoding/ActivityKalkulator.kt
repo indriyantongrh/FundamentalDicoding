@@ -31,7 +31,7 @@ class ActivityKalkulator : AppCompatActivity(), View.OnClickListener {
         btnHitung.setOnClickListener(this)
 
         btnClick.setOnClickListener{
-            val Clickbtn = Intent(this@ActivityKalkulator, ActivityIntent::class.java)
+            val Clickbtn = Intent(this@ActivityKalkulator, ActivityIntentListView::class.java)
             startActivity(Clickbtn)
         }
 

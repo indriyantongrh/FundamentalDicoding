@@ -12,7 +12,7 @@
         <activity android:name=".AcitivityMoveForResult"></activity>
         <activity android:name=".ActivityIntenExplicit" />
         <activity android:name=".ActivityKalkulator" />
-        <activity android:name=".ActivityIntent" />
+        <activity android:name=".ActivityIntentListView" />
         <activity android:name=".ActivityDepan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

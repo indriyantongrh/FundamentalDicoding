@@ -1,6 +1,5 @@
 package com.example.latihanfundamentaldicoding
 
-import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -17,7 +16,7 @@ class ActivityDepan : AppCompatActivity() {
     private lateinit var btnIntentExplicit: Button
     private lateinit var btnIntentImplicit: Button
     private lateinit var btnMoveResult: Button
-    private lateinit var btnFragment: Button
+    private lateinit var btnListView: Button
     private lateinit var tvHasil: TextView
 
 
@@ -32,19 +31,19 @@ class ActivityDepan : AppCompatActivity() {
         btnIntentImplicit = (findViewById(R.id.btnIntentImplicit))
         tvHasil = (findViewById(R.id.tvHasil))
         btnMoveResult = (findViewById(R.id.btnMoveResult))
-        btnFragment = (findViewById(R.id.btnFragment))
+        btnListView = (findViewById(R.id.btnListView))
 
         btnKalkulator.setOnClickListener{
             val ClickKalkulator = Intent(this, ActivityKalkulator::class.java)
             startActivity(ClickKalkulator)
         }
         btnIntent.setOnClickListener{
-            val ClickDataInten = Intent(this, ActivityIntent::class.java)
+            val ClickDataInten = Intent(this, ActivityIntentListView::class.java)
             startActivity(ClickDataInten)
         }
 
-        btnFragment.setOnClickListener{
-            val ClickIntentFragment = Intent(this, ActivityIntent::class.java)
+        btnListView.setOnClickListener{
+            val ClickIntentFragment = Intent(this, ActivityIntentListView::class.java)
             startActivity(ClickIntentFragment)
         }
 
